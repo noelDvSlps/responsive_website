@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* make container to resize so that it contains the floating elements inside */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main-container {
+  position: relative;
+  min-width: 360px;
+  margin: 5px;
+  grid-gap: 0px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+h2{
+  font-size: 40px;
+}
+
+.header,
+h2,
+h3,
+.header button, 
+li,
+a
+{
+  color: #6b6b6b;
+}
+
+p,
+.container-preSection-4 button {
+  color: #999;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* align vertical */
+  justify-content: space-between;
+}
+
+.header nav .active{
+  font-weight: bold;
+}
+
+
+
+.header button {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+}
+
+.header ul {
+  padding: 10px;
+}
+.header li {
+  display: inline;
+  padding: 0 10px;
+  
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header .header-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  font-size: 30px;
+}
+
+.companyName {
+  float: left;
+  padding-left: 10px;
+  font-size: x-large;
+}
+
+.section-1,
+.section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-2,
+.section-4 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.section-2 .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+}
+
+
+
+
+
+.section-2 img,
+.section-4 img {
+  width: 100%;
+  object-fit: cover;
+  
+}
+.section-2 img{height: 200px;}
+.section-4 img{height: auto;}
+
+.container-preSection-4 {display: flex;}
+
+.section-4 .profile-card {
+  flex: 25%;
+  padding: 50px;
+}
+.container-preSection-4 .container-buttonLeft {
+  margin-left: 5px;
+  margin-right: 0;
+}
+.container-preSection-4 .container-buttonRight {
+  margin-left: 0px;
+  margin-right: 5px;
+}
+.container-preSection-4 .container-buttonLeft,
+.container-preSection-4 .container-buttonRight {
+  display: flex;
+  padding: 0;
+  flex: 2%;
+  align-items: center;
+}
+
+.container-preSection-4 button {
+  font-size: 50px;
+  border: none;
+  background-color: transparent;
+}
+
+.profile-card {text-align: left;}
+.profile-card a:hover .fa-circle{color: #6b6b6b;}
+.profile-card .icon-background-1{color: #999;}
+.profile-card .icon-background-2{color: white;}
+.profile-cardName,
+.profile-cardPosition {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color: #282828;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  padding-bottom: 10px;
+}
+footer .section-socialMedia,
+footer .section-contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+footer .section-socialMedia {margin-top: 30px;}
+footer .section-contacts {margin: 50px 0 75px 0;}
+footer .section-socialMedia a {
+  padding-left: 0px;
+  color: #999;
+  text-decoration: none;
+}
+footer .section-socialMedia i {margin: 0 10px;}
+
+footer .contacts {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  
+}
+
+footer hr {
+  width: 100%;
+  color: white;
+}
+
+
+footer .icon-background-1{color: #6b6b6b;}
+footer .icon-background-2{color: black;}
+footer th{color: white;}
+footer div {margin: 5px 0;
+}
+.email:hover,
+.phone:hover,
+footer a:hover,
+footer a:hover .fa-circle
+{color: white;}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  
+  .section-2 {flex-direction: column;}
+  .section-2 .card {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .section-2 .container{flex: 1;}
+  .section-4 .profile-card {flex: 50%;}
+  .profile-card {text-align: center;}
+}
+
+/* show trigram and hide menu  when 768px or less*/
+@media (max-width: 768px) {
+  [aria-controls="menu-list"] {display: block;}
+  .header ul {display: none;}
+
+}
+
+@media (max-width: 767px) {
+  
+  .section-2,
+  .section-2 .card,
+  .section-contacts,
+  .section-socialMedia {
+    align-items: center;
+    flex-direction: column;
+  }
+  .section-socialMedia a {padding-left: 0;}
+  .container-preSection-4 button {display: none;}
+  .img-container {
+    width: 300%;
+    height: auto;
+  }
+  .section-4 .profile-card {flex: 100%;}
+  .profile-card {text-align: center;}
+  footer .section-contacts,
+  footer .section-socialMedia
+  {margin: 10px 10px;
+  flex-direction: column;
+  align-items: center;
+  }
+  footer .section-socialMedia{
+    padding-top: 10px;
+    row-gap: 5px;
+  }
+
+}
